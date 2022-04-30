@@ -55,6 +55,12 @@ public class GameListener : MonoBehaviour
             isStart = false;
         }
 
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            GlobalEnvironment.isOver = true;
+            return;
+        }
+
         if(GlobalEnvironment.PACDOT_LIST.Count<=0)
         {
             if(GlobalEnvironment.SCORE>0)

@@ -58,6 +58,7 @@ public class Ghost : MonoBehaviour
         float currentTime = Time.time;
         if(!GameListener.isStart)
         {
+            body.velocity = Vector2.zero;
             return;
         }
         if (currentTime - GlobalEnvironment.GHOST_START_TIME[name] <= GlobalEnvironment.GHOST_STAND_TIME[name])
@@ -145,11 +146,11 @@ public class Ghost : MonoBehaviour
         RaycastHit2D ray0 = Physics2D.Raycast(new Vector2(body.position.x + 0.8f, body.position.y + 0.8f), Vector2.right);
         RaycastHit2D ray1 = Physics2D.Raycast(new Vector2(body.position.x + 0.8f, body.position.y), Vector2.right);
         RaycastHit2D ray2 = Physics2D.Raycast(new Vector2(body.position.x + 0.8f, body.position.y - 0.8f), Vector2.right);
-        if (ray1.distance>=GlobalEnvironment.GHOST_DISTANCE||ray1.collider.gameObject.name.StartsWith("Pacdot"))
+        if (ray1.distance>=GlobalEnvironment.GHOST_DISTANCE||ray1.collider.gameObject.name.StartsWith("Pacdot")||ray1.collider.gameObject.name.StartsWith("Pacman"))
         {
-            if (ray0.distance >= GlobalEnvironment.GHOST_DISTANCE || ray0.collider.gameObject.name.StartsWith("Pacdot"))
+            if (ray0.distance >= GlobalEnvironment.GHOST_DISTANCE || ray0.collider.gameObject.name.StartsWith("Pacdot") || ray0.collider.gameObject.name.StartsWith("Pacman"))
             {
-                if (ray2.distance >= GlobalEnvironment.GHOST_DISTANCE || ray2.collider.gameObject.name.StartsWith("Pacdot"))
+                if (ray2.distance >= GlobalEnvironment.GHOST_DISTANCE || ray2.collider.gameObject.name.StartsWith("Pacdot") || ray2.collider.gameObject.name.StartsWith("Pacman"))
                 {
                     checkDirect[0] = true;
                 }
@@ -159,11 +160,11 @@ public class Ghost : MonoBehaviour
         ray0 = Physics2D.Raycast(new Vector2(body.position.x - 0.8f, body.position.y + 0.8f), Vector2.left);
         ray1 = Physics2D.Raycast(new Vector2(body.position.x - 0.8f, body.position.y), Vector2.left);
         ray2 = Physics2D.Raycast(new Vector2(body.position.x - 0.8f, body.position.y - 0.8f), Vector2.left);
-        if (ray1.distance >= GlobalEnvironment.GHOST_DISTANCE || ray1.collider.gameObject.name.StartsWith("Pacdot"))
+        if (ray1.distance >= GlobalEnvironment.GHOST_DISTANCE || ray1.collider.gameObject.name.StartsWith("Pacdot") || ray1.collider.gameObject.name.StartsWith("Pacman"))
         {
-            if (ray0.distance >= GlobalEnvironment.GHOST_DISTANCE || ray0.collider.gameObject.name.StartsWith("Pacdot"))
+            if (ray0.distance >= GlobalEnvironment.GHOST_DISTANCE || ray0.collider.gameObject.name.StartsWith("Pacdot") || ray0.collider.gameObject.name.StartsWith("Pacman"))
             {
-                if (ray2.distance >= GlobalEnvironment.GHOST_DISTANCE || ray2.collider.gameObject.name.StartsWith("Pacdot"))
+                if (ray2.distance >= GlobalEnvironment.GHOST_DISTANCE || ray2.collider.gameObject.name.StartsWith("Pacdot") || ray2.collider.gameObject.name.StartsWith("Pacman"))
                 {
                     checkDirect[1] = true;
                 }
@@ -173,11 +174,11 @@ public class Ghost : MonoBehaviour
         ray0 = Physics2D.Raycast(new Vector2(body.position.x + 0.8f, body.position.y + 0.8f), Vector2.up);
         ray1 = Physics2D.Raycast(new Vector2(body.position.x, body.position.y + 0.8f), Vector2.up);
         ray2 = Physics2D.Raycast(new Vector2(body.position.x - 0.8f, body.position.y + 0.8f), Vector2.up);
-        if (ray1.distance >= GlobalEnvironment.GHOST_DISTANCE || ray1.collider.gameObject.name.StartsWith("Pacdot"))
+        if (ray1.distance >= GlobalEnvironment.GHOST_DISTANCE || ray1.collider.gameObject.name.StartsWith("Pacdot") || ray1.collider.gameObject.name.StartsWith("Pacman"))
         {
-            if (ray0.distance >= GlobalEnvironment.GHOST_DISTANCE || ray0.collider.gameObject.name.StartsWith("Pacdot"))
+            if (ray0.distance >= GlobalEnvironment.GHOST_DISTANCE || ray0.collider.gameObject.name.StartsWith("Pacdot") || ray0.collider.gameObject.name.StartsWith("Pacman"))
             {
-                if (ray2.distance >= GlobalEnvironment.GHOST_DISTANCE || ray2.collider.gameObject.name.StartsWith("Pacdot"))
+                if (ray2.distance >= GlobalEnvironment.GHOST_DISTANCE || ray2.collider.gameObject.name.StartsWith("Pacdot") || ray2.collider.gameObject.name.StartsWith("Pacman"))
                 {
                     checkDirect[2] = true;
                 }
@@ -187,11 +188,11 @@ public class Ghost : MonoBehaviour
         ray0 = Physics2D.Raycast(new Vector2(body.position.x + 0.8f, body.position.y - 0.8f), Vector2.down);
         ray1 = Physics2D.Raycast(new Vector2(body.position.x, body.position.y - 0.8f), Vector2.down);
         ray2 = Physics2D.Raycast(new Vector2(body.position.x - 0.8f, body.position.y - 0.8f), Vector2.down);
-        if (ray1.distance >= GlobalEnvironment.GHOST_DISTANCE || ray1.collider.gameObject.name.StartsWith("Pacdot"))
+        if (ray1.distance >= GlobalEnvironment.GHOST_DISTANCE || ray1.collider.gameObject.name.StartsWith("Pacdot") || ray1.collider.gameObject.name.StartsWith("Pacman"))
         {
-            if (ray0.distance >= GlobalEnvironment.GHOST_DISTANCE || ray0.collider.gameObject.name.StartsWith("Pacdot"))
+            if (ray0.distance >= GlobalEnvironment.GHOST_DISTANCE || ray0.collider.gameObject.name.StartsWith("Pacdot") || ray0.collider.gameObject.name.StartsWith("Pacman"))
             {
-                if (ray2.distance >= GlobalEnvironment.GHOST_DISTANCE || ray2.collider.gameObject.name.StartsWith("Pacdot"))
+                if (ray2.distance >= GlobalEnvironment.GHOST_DISTANCE || ray2.collider.gameObject.name.StartsWith("Pacdot") || ray2.collider.gameObject.name.StartsWith("Pacman"))
                 {
                     checkDirect[3] = true;
                 }

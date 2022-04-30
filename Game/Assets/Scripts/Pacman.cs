@@ -95,6 +95,7 @@ public class Pacman : MonoBehaviour
                 GlobalEnvironment.isOver = true;
                 collision.gameObject.GetComponent<Rigidbody2D>().position = body.position;
                 body.position = new Vector2(2, 2);
+                body.velocity = Vector2.zero;
             }
         }
         else if(GlobalEnvironment.PACDOT_LIST.Count <= 50)
@@ -103,6 +104,7 @@ public class Pacman : MonoBehaviour
             GlobalEnvironment.isOver = true;
             collision.gameObject.GetComponent<Rigidbody2D>().position = body.position;
             body.position = new Vector2(2, 2);
+            body.velocity = Vector2.zero;
         }
         else
         {
